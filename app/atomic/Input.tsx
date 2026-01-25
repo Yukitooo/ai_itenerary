@@ -1,9 +1,26 @@
 import React from 'react'
 
+interface InputProps {
+  label: string,
+  value: string,
+  placeholder: string,
+  onChange: (val: string) => void
+}
 
-function Input() {
+function Input({label, value, placeholder, onChange}: InputProps) {
+
   return (
-    <div>input</div>
+    <div className="flex flex-col gap-1 w-full">
+      <label className="font-semibold text-gray-700"> {label} </label>
+      <input
+        type="text"
+        value={value}
+        placeholder={placeholder}
+        onChange={(e) => onChange(e.target.value)}
+        required
+        className="p-2 border rounded-md text-black focus:ring-2 focus:ring-blue-500 outline-none"
+      />
+    </div>
   )
 }
 
