@@ -1,6 +1,8 @@
-import React from 'react'
+"use client"
+import React, {useState} from 'react'
 import Table from './Table'
-import { ItineraryRow } from '@/app/types/types';
+import ItineraryForm from './ItineraryForm';
+import { ItineraryRow, Plan } from '@/app/types/types';
 import DaysButton from '@/app/atomic/DaysButton';
 
 const data: ItineraryRow[] = [
@@ -10,15 +12,30 @@ const data: ItineraryRow[] = [
     { time: "2:00 - 4:30", place: "Baguio Lunch", itineraryRowDescription: "Eat very delicious soup" },
   ];
 
-
 function page() {
+
+  const [plan, setPlan] = useState<Plan>({
+            country: "",
+            dateRange: 0,
+            planDescription: ""
+          })
+        
+  const updateField = (field: keyof Plan, value: string | number) => {
+  setPlan(prev => ({
+      ...prev,
+      [field]: value
+  }))
+  }
+
   return (
     <> 
-      <div>
+      <div> 
+        {/* Nicole's part */}
         <div>
-          {/* ------------------
-          NICOLES PART
-          ------------------- */}
+          <ItineraryForm 
+            plan={plan}
+            updateField={updateField}
+          />
         </div>
 
         <div>
