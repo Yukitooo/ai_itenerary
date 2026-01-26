@@ -1,12 +1,11 @@
 import React from 'react'
 import { ItineraryRow, Itinerary, ItineraryDay} from '@/app/types/types';
 
-const data: ItineraryRow[] = [
-    { time: "10:00 - 11:20", place: "Baguio Strawberry Farm", itineraryRowDescription: "Pick some strawberries" },
-    { time: "2:00 - 4:30", place: "Baguio Lunch", itineraryRowDescription: "Eat very delicious soup" },
-  ];
+type TableRows = {
+  data: ItineraryRow[];
+}
 
-function Table() {
+function Table({data}: TableRows) {
   
    return (
       <div className="w-full p-4 box-border">
@@ -27,7 +26,7 @@ function Table() {
 
         <tbody>
           {data.map((item, index) => (
-            <tr key={index} className="hover:bg-gray-50">
+            <tr key={index} className="hover:bg-gray-900 cursor-pointer">
               <td className="border border-gray-300 px-4 py-3">
                 {item.time}
               </td>
