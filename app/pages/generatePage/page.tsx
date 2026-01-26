@@ -14,6 +14,8 @@ const data: ItineraryRow[] = [
 function page() {
   return (
     <>  
+      <h1> Baguio</h1>
+      <h3>This is the best place in the ph</h3>
       <Table data={data}/>
       <DaysButton dayNumber={5}/>
     </>
