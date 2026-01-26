@@ -28,17 +28,17 @@ function page() {
   }
 
   return (
-    <> 
-      <div> 
+    <main className="p-10 flex flex-col gap-10"> 
+      <div className="flex flex-col lg:flex-row gap-10 items-start"> 
         {/* Nicole's part */}
-        <div>
+        <div className="w-full lg:w-1/3">
           <ItineraryForm 
             plan={plan}
             updateField={updateField}
           />
         </div>
 
-        <div>
+        <div className="w-full lg:w-2/3 lg:pl-10">
           <h1> Baguio</h1>
             <h3>This is the best place in the ph</h3>
             <Table data={data}/>
@@ -47,7 +47,7 @@ function page() {
       </div>
       
      
-    </>
+    </main>
     
   )
 }
