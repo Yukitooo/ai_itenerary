@@ -1,6 +1,7 @@
 import React from 'react'
 import Table from './Table'
 import { ItineraryRow } from '@/app/types/types';
+import DaysButton from '@/app/atomic/DaysButton';
 
 const data: ItineraryRow[] = [
     { time: "10:00 - 11:20", place: "Baguio Strawberry Farm", itineraryRowDescription: "Pick some strawberries" },
@@ -14,6 +15,7 @@ function page() {
   return (
     <>  
       <Table data={data}/>
+      <DaysButton dayNumber={5}/>
     </>
     
   )

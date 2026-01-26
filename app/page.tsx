@@ -66,8 +66,6 @@ export default function Home() {
 
       <DaysButton 
         dayNumber={5}
-        isActive={false}
-        onClick={(num) => console.log(num)}
       />
       
     </main>
