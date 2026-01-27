@@ -39,8 +39,8 @@ function page() {
         </div>
 
         <div className="w-full lg:w-2/3 lg:pl-10">
-          <h1> Baguio</h1>
-            <h3>This is the best place in the ph</h3>
+          <h1> {plan.country}</h1>
+            <h3>{plan.planDescription}</h3>
             <Table data={data}/>
             <DaysButton dayNumber={5}/>
         </div>  
