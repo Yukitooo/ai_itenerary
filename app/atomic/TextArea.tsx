@@ -1,15 +1,17 @@
-"use client"
-import React, {useState} from 'react'
+"use client";
+import React from "react";
 
-interface TextAreaProps {
-  label: string,
-  value: string,
-  placeholder: string,
-  onChange: (val: string) => void
-}
-
-function Input({label, value, placeholder, onChange}: TextAreaProps) {
-
+function TextArea({
+  label,
+  placeholder,
+  value,
+  onChange,
+}: {
+  label: string;
+  placeholder: string;
+  value: string;
+  onChange: (val: string) => void;
+}) {
   return (
     <div className="flex flex-col gap-1 w-full">
       <label className="font-semibold text-white"> {label} </label>
@@ -21,7 +23,7 @@ function Input({label, value, placeholder, onChange}: TextAreaProps) {
         className="p-2 border rounded-md text-grey-700 h-32 resize-none focus:ring-2 focus:ring-blue-500 outline-none"
       />
     </div>
-  )
+  );
 }
 
-export default Input
+export default TextArea;

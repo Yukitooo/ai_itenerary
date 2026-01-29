@@ -1,20 +1,17 @@
-import React from 'react'
-import { ItineraryRow, Itinerary, ItineraryDay} from '@/app/types/types';
+import React from "react";
+import { ItineraryRow } from "@/app/types/types";
 
 type TableRows = {
   data: ItineraryRow[];
-}
+};
 
-function Table({data}: TableRows) {
-  
-   return (
-      <div className="w-full p-4 box-border">
+function Table({ data }: TableRows) {
+  return (
+    <div className="w-full p-4 box-border">
       <table className="w-full border-collapse">
         <thead>
           <tr className="bg-gray-600">
-            <th className="border border-gray-300 px-4 py-3 text-left">
-              Time
-            </th>
+            <th className="border border-gray-300 px-4 py-3 text-left">Time</th>
             <th className="border border-gray-300 px-4 py-3 text-left">
               Place
             </th>
@@ -27,12 +24,8 @@ function Table({data}: TableRows) {
         <tbody>
           {data.map((item, index) => (
             <tr key={index} className="hover:bg-gray-900 cursor-pointer">
-              <td className="border border-gray-300 px-4 py-3">
-                {item.time}
-              </td>
-              <td className="border border-gray-300 px-4 py-3">
-                {item.place}
-              </td>
+              <td className="border border-gray-300 px-4 py-3">{item.time}</td>
+              <td className="border border-gray-300 px-4 py-3">{item.place}</td>
               <td className="border border-gray-300 px-4 py-3">
                 {item.itineraryRowDescription}
               </td>
@@ -41,7 +34,7 @@ function Table({data}: TableRows) {
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 
-export default Table
+export default Table;

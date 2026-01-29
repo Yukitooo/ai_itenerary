@@ -1,14 +1,16 @@
-import React from 'react'
+import React from "react";
 
-interface InputProps {
-  label: string,
-  value: string,
-  placeholder: string,
-  onChange: (val: string) => void
-}
-
-function Input({label, value, placeholder, onChange}: InputProps) {
-
+function Input({
+  label,
+  placeholder,
+  value,
+  onChange,
+}: {
+  label: string;
+  placeholder: string;
+  value: string;
+  onChange: (val: string) => void;
+}) {
   return (
     <div className="flex flex-col gap-1 w-full">
       <label className="font-semibold text-white"> {label} </label>
@@ -21,7 +23,7 @@ function Input({label, value, placeholder, onChange}: InputProps) {
         className="p-2 border rounded-md text-grey-700 focus:ring-2 focus:ring-blue-500 outline-none"
       />
     </div>
-  )
+  );
 }
 
-export default Input
+export default Input;
