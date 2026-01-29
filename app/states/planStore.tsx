@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { Plan } from "../types/types";
 
 interface CounterState {
   count: number;
@@ -15,4 +16,22 @@ const useCounterStore = create<CounterState>((set) => ({
   reset: () => set({ count: 0 }),
 }));
 
-export default useCounterStore;
+interface PlanState{
+    plan: Plan;
+    onSubmit: () => void;
+}
+
+const usePlanStore = create<PlanState>((set) => ({
+    plan: {
+        country: "",
+        dateRange: 0,
+        planDescription: ""
+    },
+
+    onSubmit: () => {console.log("Submitted")}
+})
+
+)
+
+// export default useCounterStore;
+export default usePlanStore;
