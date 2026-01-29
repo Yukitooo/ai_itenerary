@@ -4,7 +4,7 @@ import Table from "./Table";
 import ItineraryForm from "./ItineraryForm";
 import { ItineraryRow } from "@/app/types/types";
 import DaysButton from "@/app/atomic/DaysButton";
-import { usePlannerState } from "@/app/states/usePlannerState";
+import { usePlannerState } from "@/app/statess/usePlannerState";
 
 const data: ItineraryRow[] = [
   {

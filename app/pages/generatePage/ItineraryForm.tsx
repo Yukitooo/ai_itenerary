@@ -3,7 +3,7 @@ import BasicButton from "@/app/atomic/BasicButton";
 import Input from "@/app/atomic/Input";
 import TextArea from "@/app/atomic/TextArea";
 import Dropdown from "@/app/atomic/Dropdown";
-import { usePlannerState } from "@/app/states/usePlannerState";
+import { usePlannerState } from "@/app/statess/usePlannerState";
 
 function ItineraryForm() {
   const {
