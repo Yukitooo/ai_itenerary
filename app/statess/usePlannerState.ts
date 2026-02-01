@@ -8,16 +8,29 @@ interface PlannerFunctions {
   resetForm: () => void;
 }
 
-type PlannerState = Plan & PlannerFunctions;
+type PlannerState = { plan: Plan } & PlannerFunctions;
 
 export const usePlannerState = create<PlannerState>((set) => ({
-  country: "",
-  dateRange: 0,
-  planDescription: "",
+  plan: {
+    country: "",
+    dateRange: 0,
+    planDescription: "",
+  },
 
-  setCountry: (newCountry) => set({ country: newCountry }),
-  setDateRange: (newDateRange) => set({ dateRange: newDateRange }),
+  setCountry: (newCountry) =>
+    set((state) => ({
+      plan: { ...state.plan, country: newCountry },
+    })),
+  setDateRange: (newDateRange) =>
+    set((state) => ({
+      plan: { ...state.plan, dateRange: newDateRange },
+    })),
   setPlanDescription: (newPlanDescription) =>
-    set({ planDescription: newPlanDescription }),
-  resetForm: () => set({ country: "", dateRange: 0 }),
+    set((state) => ({
+      plan: { ...state.plan, planDescription: newPlanDescription },
+    })),
+  resetForm: () =>
+    set({
+      plan: { country: "", dateRange: 0, planDescription: "" },
+    }),
 }));

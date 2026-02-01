@@ -1,5 +1,4 @@
 import React from "react";
-import { usePlannerState } from "../states/usePlannerState";
 
 function Dropdown({
   label,
