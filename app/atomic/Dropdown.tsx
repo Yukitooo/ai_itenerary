@@ -19,7 +19,7 @@ function Dropdown({
       <select
         value={value}
         onChange={(e) => onChange(parseInt(e.target.value))}
-        className="p-2 border rounded-md text-white focus:ring-2 focus:ring-blue-500 outline-none cursor-pointer"
+        className="p-2 border rounded-md text-gray-500 focus:ring-2 focus:ring-blue-500  cursor-pointer"
       >
         {placeholder && (
           <option value="" disabled>

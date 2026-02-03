@@ -47,12 +47,12 @@ function Page() {
     <main className="p-10 flex flex-col gap-10">
       <div className="flex flex-col lg:flex-row gap-10 items-start">
         {/* Nicole's part */}
-        <div className="w-full lg:w-1/3">
+        <div className="w-full lg:w-1/2">
           <ItineraryForm />
         </div>
 
-        <div className="w-full lg:w-2/3 lg:pl-10">
-          <h1> {country}</h1>
+        <div className= "p-10 w-full flex align-center flex-col justify-center bg-gray-800">
+          <h1 className="text-lg"> {country}</h1>
           <h3>{planDescription}</h3>
           <Table data={data} />
           <DaysButton dayNumber={dateRange} />
