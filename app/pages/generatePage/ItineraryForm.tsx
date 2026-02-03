@@ -7,12 +7,14 @@ import { usePlannerState } from "@/app/statess/usePlannerState";
 
 function ItineraryForm() {
   const {
-    country,
-    dateRange,
-    planDescription,
-    setCountry,
-    setDateRange,
-    setPlanDescription,
+    plan: {
+      country,
+      dateRange,
+      planDescription},
+    plannerFunctions: {
+      setCountry,
+      setDateRange,
+      setPlanDescription,}
   } = usePlannerState();
   const noOfDays = [1, 2, 3, 4, 5, 6, 7];
 
