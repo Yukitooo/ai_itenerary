@@ -16,7 +16,7 @@ function ItineraryForm() {
       setDateRange,
       setPlanDescription,}
   } = usePlannerState();
-  
+
   const noOfDays = [1, 2, 3, 4, 5, 6, 7];
 
   return (
@@ -44,6 +44,12 @@ function ItineraryForm() {
       />
 
       <BasicButton text="Generate Itinerary" />
+
+      Country: {country}
+      Data Range: {dateRange}
+      Plan Description: {planDescription}
+      
+
     </div>
   );
 }
