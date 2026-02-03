@@ -1,11 +1,25 @@
 import React from "react";
 import { ItineraryRow } from "@/app/types/types";
+import { usePlannerState } from "@/app/statess/usePlannerState";
 
 type TableRows = {
   data: ItineraryRow[];
 };
 
+
+
 function Table({ data }: TableRows) {
+
+  const {
+    plan: {
+      country,
+      dateRange,
+      planDescription},
+    plannerFunctions: {
+      setCountry,
+      setDateRange,
+      setPlanDescription,}
+  } = usePlannerState();
   return (
     <div className="w-full p-4 box-border">
       <table className="w-full border-collapse">
