@@ -19,10 +19,11 @@ export const usePlannerState = create<PlannerState>((set) => ({
     planDescription: "",
   },
 
-  plannerFunctions: 
-    {setCountry: (newCountry) =>
+  plannerFunctions: { 
+  
+    setCountry: (newCountry) =>
       set((state) => ({
-        plan: { ...state.plan, country: newCountry },
+        plan: { ...state.plan, coupntry: newCountry },
       })),
     setDateRange: (newDateRange) =>
       set((state) => ({

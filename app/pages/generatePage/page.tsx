@@ -30,8 +30,8 @@ const data: ItineraryRow[] = [
 ];
 
 function Page() {
-  const country = usePlannerState((state) => state.country);
-  const planDescription = usePlannerState((state) => state.planDescription);
+  const country = usePlannerState((state) => state.plan.country);
+  const planDescription = usePlannerState((state) => state.plan.planDescription);
 
   return (
     <main className="p-10 flex flex-col gap-10">
