@@ -7,14 +7,10 @@ import { usePlannerState } from "@/app/statess/usePlannerState";
 
 function ItineraryForm() {
   const {
-    plan: {
-      country,
-      dateRange,
-      planDescription},
-    plannerFunctions: {
-      setCountry,
-      setDateRange,
-      setPlanDescription,}
+    plan: { country, dateRange, planDescription },
+    setCountry,
+    setDateRange,
+    setPlanDescription,
   } = usePlannerState();
 
   const noOfDays = [1, 2, 3, 4, 5, 6, 7];
@@ -27,7 +23,6 @@ function ItineraryForm() {
         value={country}
         onChange={setCountry}
       />
-
       <Dropdown
         label="No. of Days"
         options={noOfDays}
@@ -35,21 +30,16 @@ function ItineraryForm() {
         value={dateRange}
         onChange={setDateRange}
       />
-
       <TextArea
         label="Describe your ideal itinerary"
         placeholder="I want my itinerary to be..."
         value={planDescription}
         onChange={setPlanDescription}
       />
-
       <BasicButton text="Generate Itinerary" />
-
       Country: {country}
       Data Range: {dateRange}
       Plan Description: {planDescription}
-      
-
     </div>
   );
 }
