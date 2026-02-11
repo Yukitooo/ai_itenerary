@@ -20,3 +20,7 @@ export type Itinerary = {
   itineraryDescription: string;
   itineraryList: ItineraryDay[];
 }
+
+export type Toggles = {
+  showTable: boolean
+}

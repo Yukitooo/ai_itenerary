@@ -4,8 +4,19 @@ import Input from "@/app/atomic/Input";
 import TextArea from "@/app/atomic/TextArea";
 import Dropdown from "@/app/atomic/Dropdown";
 import { usePlannerState } from "@/app/statess/usePlannerState";
+import { useToggleState } from "@/app/statess/useToggleState";
 
 function ItineraryForm() {
+
+  const{
+    toggle: {
+      showTable,
+    },
+    toggleFunctions: {
+      toggleTable
+    }
+  } = useToggleState();
+
   const {
     plan: {
       country,
@@ -17,7 +28,11 @@ function ItineraryForm() {
       setPlanDescription,}
   } = usePlannerState();
 
+ 
+
   const noOfDays = [1, 2, 3, 4, 5, 6, 7];
+  
+  console.log(showTable)
 
   return (
     <div className="flex flex-col gap-4 max-w-md">
@@ -43,11 +58,14 @@ function ItineraryForm() {
         onChange={setPlanDescription}
       />
 
-      <BasicButton text="Generate Itinerary" />
+      <BasicButton text="Generate Itinerary" onClick={toggleTable}/>
 
       Country: {country}
       Data Range: {dateRange}
       Plan Description: {planDescription}
+
+      Toggle Table: {showTable}
+      
       
 
     </div>
