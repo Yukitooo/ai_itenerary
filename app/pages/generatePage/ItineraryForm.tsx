@@ -18,14 +18,10 @@ function ItineraryForm() {
   } = useToggleState();
 
   const {
-    plan: {
-      country,
-      dateRange,
-      planDescription},
-    plannerFunctions: {
-      setCountry,
-      setDateRange,
-      setPlanDescription,}
+    plan: { country, dateRange, planDescription },
+    setCountry,
+    setDateRange,
+    setPlanDescription,
   } = usePlannerState();
 
  
@@ -42,7 +38,6 @@ function ItineraryForm() {
         value={country}
         onChange={setCountry}
       />
-
       <Dropdown
         label="No. of Days"
         options={noOfDays}
@@ -50,7 +45,6 @@ function ItineraryForm() {
         value={dateRange}
         onChange={setDateRange}
       />
-
       <TextArea
         label="Describe your ideal itinerary"
         placeholder="I want my itinerary to be..."

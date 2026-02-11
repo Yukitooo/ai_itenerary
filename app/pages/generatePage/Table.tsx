@@ -6,19 +6,12 @@ type TableRows = {
   data: ItineraryRow[];
 };
 
-
-
 function Table({ data }: TableRows) {
-
   const {
-    plan: {
-      country,
-      dateRange,
-      planDescription},
-    plannerFunctions: {
-      setCountry,
-      setDateRange,
-      setPlanDescription,}
+    plan: { country, dateRange, planDescription },
+    setCountry,
+    setDateRange,
+    setPlanDescription,
   } = usePlannerState();
   return (
     <div className="w-full p-4 box-border">

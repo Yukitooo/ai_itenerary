@@ -29,19 +29,10 @@ const data: ItineraryRow[] = [
   },
 ];
 
-
 function Page() {
   const {
-    plan: {
-      country,
-      dateRange,
-      planDescription},
-    plannerFunctions: {
-      setCountry,
-      setDateRange,
-      setPlanDescription,}
+    plan: { country, dateRange, planDescription },
   } = usePlannerState();
-
 
   return (
     <main className="p-10 flex flex-col gap-10">
