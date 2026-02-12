@@ -5,6 +5,7 @@ import ItineraryForm from "./ItineraryForm";
 import { ItineraryRow } from "@/app/types/types";
 import DaysButton from "@/app/atomic/DaysButton";
 import { usePlannerState } from "@/app/statess/usePlannerState";
+import ItineraryOutput from "./ItineraryOutput";
 
 const data: ItineraryRow[] = [
   {
@@ -42,12 +43,7 @@ function Page() {
           <ItineraryForm />
         </div>
 
-        <div className= "p-10 w-full flex align-center flex-col justify-center bg-gray-800">
-          <h1 className="text-lg"> {country}</h1>
-          <h3>{planDescription}</h3>
-          <Table data={data} />
-          <DaysButton dayNumber={dateRange} />
-        </div>
+        <ItineraryOutput country={country} planDescription={planDescription} data={data}  dateRange={dateRange}/ >
       </div>
     </main>
   );
