@@ -8,7 +8,6 @@ import { usePlannerState } from "@/app/statess/usePlannerState";
 import ItineraryOutput from "./ItineraryOutput";
 import { useToggleState } from "@/app/statess/useToggleState";
 
-
 const data: ItineraryRow[] = [
   {
     time: "10:00 - 11:20",
@@ -32,38 +31,38 @@ const data: ItineraryRow[] = [
   },
 ];
 
-
-
 function Page() {
   const {
     plan: { country, dateRange, planDescription },
   } = usePlannerState();
 
-  
-   const{
-    toggle: {
-      showTable,
-    },
-    toggleFunctions: {
-      toggleTable
-    }
+  const {
+    toggle: { showTable },
+    toggleFunctions: { toggleTable },
   } = useToggleState();
 
-
-
-
   return (
-    <main className="p-10 flex flex-col gap-10">
+    <main className="p-10 flex flex-col gap-10 h-screen">
       <div className="flex flex-col lg:flex-row gap-10 items-start">
         {/* Nicole's part */}
         <div className="w-full lg:w-1/2">
           <ItineraryForm />
         </div>
 
-        {showTable ? 
-        <ItineraryOutput country={country} planDescription={planDescription} data={data}  dateRange={dateRange}/ > :
-        '' }
-        
+        <div className="p-10 w-full h-full flex align-center flex-col justify-center bg-gray-800">
+          {showTable ? (
+            <ItineraryOutput
+              country={country}
+              planDescription={planDescription}
+              data={data}
+              dateRange={dateRange}
+            />
+          ) : (
+            <div className="flex align-center justify-center">
+              <h1 className="">I will help you travel!</h1>
+            </div>
+          )}
+        </div>
       </div>
     </main>
   );

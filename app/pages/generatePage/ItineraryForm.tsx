@@ -7,14 +7,9 @@ import { usePlannerState } from "@/app/statess/usePlannerState";
 import { useToggleState } from "@/app/statess/useToggleState";
 
 function ItineraryForm() {
-
-  const{
-    toggle: {
-      showTable,
-    },
-    toggleFunctions: {
-      toggleTable
-    }
+  const {
+    toggle: { showTable },
+    toggleFunctions: { toggleTable },
   } = useToggleState();
 
   const {
@@ -24,20 +19,13 @@ function ItineraryForm() {
     setPlanDescription,
   } = usePlannerState();
 
- 
-
   const noOfDays = [1, 2, 3, 4, 5, 6, 7];
-  
-  console.log(showTable)
+
+  console.log(showTable);
 
   return (
     <div className="flex flex-col gap-4 max-w-md">
-      <Input
-        label="Country"
-        placeholder="e.g. Japan"
-        value={country}
-        onChange={setCountry}
-      />
+      <Input label="Country" placeholder="e.g. Japan" value={country} onChange={setCountry} />
       <Dropdown
         label="No. of Days"
         options={noOfDays}
@@ -51,17 +39,11 @@ function ItineraryForm() {
         value={planDescription}
         onChange={setPlanDescription}
       />
-
-      <BasicButton text="Generate Itinerary" onClick={toggleTable}/>
-
+      <BasicButton text="Generate Itinerary" onClick={toggleTable} />
       Country: {country}
       Data Range: {dateRange}
       Plan Description: {planDescription}
-
       Toggle Table: {showTable}
-      
-      
-
     </div>
   );
 }

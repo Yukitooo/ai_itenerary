@@ -1,13 +1,12 @@
-import React from 'react'
+import React from "react";
 
 interface ButtonProps {
-  text: string
-  type?: "button" | "submit"
-  onClick?: () => void
+  text: string;
+  type?: "button" | "submit";
+  onClick?: () => void;
 }
 
-function BasicButton({text, type = "submit", onClick}: ButtonProps) {
-
+function BasicButton({ text, type = "submit", onClick }: ButtonProps) {
   return (
     <button
       type={type}
@@ -20,5 +19,4 @@ function BasicButton({text, type = "submit", onClick}: ButtonProps) {
   );
 }
 
-
-export default BasicButton
+export default BasicButton;

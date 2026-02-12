@@ -16,22 +16,22 @@ const useCounterStore = create<CounterState>((set) => ({
   reset: () => set({ count: 0 }),
 }));
 
-interface PlanState{
-    plan: Plan;
-    onSubmit: () => void;
+interface PlanState {
+  plan: Plan;
+  onSubmit: () => void;
 }
 
 const usePlanStore = create<PlanState>((set) => ({
-    plan: {
-        country: "",
-        dateRange: 0,
-        planDescription: ""
-    },
+  plan: {
+    country: "",
+    dateRange: 0,
+    planDescription: "",
+  },
 
-    onSubmit: () => {console.log("Submitted")}
-})
-
-)
+  onSubmit: () => {
+    console.log("Submitted");
+  },
+}));
 
 // export default useCounterStore;
 export default usePlanStore;

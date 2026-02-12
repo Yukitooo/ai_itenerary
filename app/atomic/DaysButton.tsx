@@ -15,9 +15,7 @@ function DaysButton({ dayNumber }: DaysButtonProps) {
         <button
           key={index}
           type="button"
-          onClick={() =>
-            setActiveIndex((prev) => (prev === index ? null : index))
-          }
+          onClick={() => setActiveIndex((prev) => (prev === index ? null : index))}
           className={`w-12 h-12 cursor-pointer flex items-center justify-center rounded-md font-bold transition-all border-2
           ${
             activeIndex === index
