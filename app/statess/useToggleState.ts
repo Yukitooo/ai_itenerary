@@ -16,7 +16,7 @@ export const useToggleState = create<ToggleState>((set) => ({
     },
     toggleFunctions: {
         toggleTable: () => set((state) => ({
-            toggle: {showTable: !state.toggle.showTable }
+            toggle: {showTable: true }
         })),
     }
 }))

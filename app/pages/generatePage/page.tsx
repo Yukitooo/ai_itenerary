@@ -6,6 +6,8 @@ import { ItineraryRow } from "@/app/types/types";
 import DaysButton from "@/app/atomic/DaysButton";
 import { usePlannerState } from "@/app/statess/usePlannerState";
 import ItineraryOutput from "./ItineraryOutput";
+import { useToggleState } from "@/app/statess/useToggleState";
+
 
 const data: ItineraryRow[] = [
   {
@@ -30,10 +32,25 @@ const data: ItineraryRow[] = [
   },
 ];
 
+
+
 function Page() {
   const {
     plan: { country, dateRange, planDescription },
   } = usePlannerState();
+
+  
+   const{
+    toggle: {
+      showTable,
+    },
+    toggleFunctions: {
+      toggleTable
+    }
+  } = useToggleState();
+
+
+
 
   return (
     <main className="p-10 flex flex-col gap-10">
@@ -43,7 +60,10 @@ function Page() {
           <ItineraryForm />
         </div>
 
-        <ItineraryOutput country={country} planDescription={planDescription} data={data}  dateRange={dateRange}/ >
+        {showTable ? 
+        <ItineraryOutput country={country} planDescription={planDescription} data={data}  dateRange={dateRange}/ > :
+        '' }
+        
       </div>
     </main>
   );

@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react'
 import Table from './Table'
 import DaysButton from '@/app/atomic/DaysButton'
