@@ -39,7 +39,7 @@ function ItineraryForm() {
         value={planDescription}
         onChange={setPlanDescription}
       />
-      <BasicButton text="Generate Itinerary" onClick={toggleTable} />
+      <BasicButton text="Generate Itinerary" onClick={toggleTable} disable={true} />
       Country: {country}
       Data Range: {dateRange}
       Plan Description: {planDescription}
